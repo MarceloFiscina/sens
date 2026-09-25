@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="SENS · Estética facial personalizada com naturalidade, harmonia e cuidado individual em Arapiraca - AL.">
+<title>SENS · Estética Facial em Arapiraca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pearl-1:#fdfbf8;--pearl-2:#f9f4ec;--pearl-3:#f4ebe0;--pearl-4:#efe4d6;
+  --card:#fffdf9;--ink:#2e2823;--ink-soft:#4a3f36;--muted:#8a7d6d;
+  --gold:#a7834e;--gold-soft:#c9a96e;--gold-glow:rgba(201,169,110,.18);
+  --sage:#738678;--sage-soft:#e7ebe5;--line:#ece2d2;--line-strong:#d9cbb2;
+  --deep:#39332e;
+  --shadow-sm:0 1px 2px rgba(46,40,35,.03),0 4px 16px rgba(46,40,35,.04);
+  --shadow-md:0 2px 4px rgba(46,40,35,.05),0 12px 32px rgba(46,40,35,.07);
+  --shadow-lg:0 4px 8px rgba(46,40,35,.06),0 24px 64px rgba(46,40,35,.10);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{
+  margin:0;color:var(--ink);
+  font-family:'Jost',system-ui,-apple-system,sans-serif;
+  font-weight:300;font-size:16px;line-height:1.6;letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  overflow-x:hidden;
+  background:
+    radial-gradient(ellipse 90% 60% at 15% 0%,rgba(255,255,255,.95),transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 10%,rgba(244,235,224,.85),transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 100%,rgba(232,220,196,.55),transparent 65%),
+    radial-gradient(ellipse 60% 40% at 100% 50%,rgba(250,240,228,.7),transparent 60%),
+    linear-gradient(180deg,#fdfbf8 0%,#f9f4ec 40%,#f4ebe0 100%);
+  background-attachment:fixed;
+}
+@media(max-width:800px){body{background-attachment:scroll}}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.08;margin:0;letter-spacing:.005em}
+h1{font-size:clamp(2.5rem,6.5vw,4.4rem);letter-spacing:-.015em}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);letter-spacing:-.01em}
+h3{font-size:1.7rem}
+p{margin:0 0 1em}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+em{font-style:italic;color:var(--gold);font-weight:400}
+.wrap{width:min(100% - 40px,880px);margin:0 auto}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(253,251,248,.78);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid rgba(236,226,210,.6);padding:16px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:920px;margin:0 auto;padding:0 24px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;letter-spacing:.16em}
+.brand-symbol{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--ink);border-radius:50%;font:italic 1.25rem 'Cormorant Garamond',serif;letter-spacing:0;transition:all .3s}
+.brand:hover .brand-symbol{border-color:var(--gold);color:var(--gold);transform:rotate(-6deg)}
+.brand strong{display:block;font-size:.88rem;letter-spacing:.24em;line-height:1;font-weight:500}
+.brand small{display:block;color:var(--muted);font-size:.48rem;letter-spacing:.32em;margin-top:5px;font-weight:400}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.nav-links a{text-decoration:none;transition:color .25s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{border:1px solid var(--ink);padding:9px 16px;border-radius:999px;color:var(--ink);font-size:.68rem;letter-spacing:.16em;transition:all .3s}
+.nav-cta:hover{background:var(--ink);color:#fdfbf8}
+@media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
+
+.hero{min-height:640px;position:relative;overflow:hidden;display:flex;align-items:center;padding:80px 0 100px}
+.hero::after{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(167,131,78,.22);border-radius:50%;right:-180px;top:60px;box-shadow:0 0 0 40px rgba(167,131,78,.06),0 0 0 80px rgba(167,131,78,.035),0 0 0 120px rgba(167,131,78,.02);pointer-events:none}
+.hero::before{content:"";position:absolute;width:340px;height:340px;border:1px solid rgba(167,131,78,.16);border-radius:50%;left:-140px;bottom:-100px;box-shadow:0 0 0 30px rgba(167,131,78,.04);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.eyebrow{font-size:.66rem;letter-spacing:.44em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:26px;display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:32px;height:1px;background:var(--gold);opacity:.6}
+.hero h1{margin:0 0 22px;max-width:620px}
+.hero-lead{font-size:1.05rem;color:var(--muted);margin:0;max-width:480px;line-height:1.7}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.button{display:inline-flex;align-items:center;gap:10px;background:var(--deep);border:1px solid var(--deep);color:#fdfbf8;text-decoration:none;padding:15px 26px;border-radius:999px;font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;font-weight:400;transition:all .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 4px 16px rgba(46,40,35,.12)}
+.button:hover{transform:translateY(-2px);background:var(--gold);border-color:var(--gold);box-shadow:0 8px 24px var(--gold-glow)}
+.button-outline{background:rgba(255,255,255,.5);color:var(--ink);border-color:var(--line-strong);backdrop-filter:blur(8px);box-shadow:none}
+.button-outline:hover{background:rgba(255,255,255,.85);color:var(--gold);border-color:var(--gold);box-shadow:none}
+.hero-footnote{font-size:.75rem;color:#9a8c7c;max-width:340px;margin-top:80px;font-style:italic;line-height:1.7;padding-left:16px;border-left:1px solid var(--gold-soft)}
+@media(max-width:620px){.hero{min-height:auto;padding:60px 0 72px}.hero::after{width:340px;height:340px;right:-140px}.hero-footnote{margin-top:48px}}
+
+section{padding:84px 0;border-top:1px solid var(--line)}
+@media(max-width:620px){section{padding:60px 0}}
+.section-label{font-size:.64rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:0 0 14px;display:inline-flex;align-items:center;gap:12px}
+.section-label::before{content:"";width:24px;height:1px;background:var(--gold);opacity:.6}
+.section-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:36px}
+.section-intro .lead{max-width:300px;margin:0;font-size:.85rem}
+.lead{color:var(--muted);font-size:.9rem;line-height:1.7}
+@media(max-width:620px){.section-intro{display:block}.section-intro .lead{margin-top:14px}}
+
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:820px){.pgrid{grid-template-columns:repeat(2,1fr);gap:12px}}
+@media(max-width:440px){.pgrid{grid-template-columns:1fr}}
+.pcard{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(253,251,248,.9));border:1px solid rgba(236,226,210,.8);border-radius:6px;padding:30px 24px 24px;text-align:left;transition:all .4s cubic-bezier(.2,.8,.2,1);box-shadow:var(--shadow-sm);position:relative;overflow:hidden;cursor:pointer;backdrop-filter:blur(8px);display:flex;flex-direction:column;min-height:220px}
+.pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .4s}
+.pcard::after{content:"";position:absolute;bottom:-50%;right:-30%;width:70%;height:90%;border-radius:50%;background:radial-gradient(circle,var(--gold-glow),transparent 70%);opacity:0;transition:opacity .5s;pointer-events:none}
+.pcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--line-strong)}
+.pcard:hover::before{opacity:1}
+.pcard:hover::after{opacity:1}
+.pcard:hover .pcard-hint::after{transform:translateX(4px)}
+.pcard:hover .pcard-icon{transform:scale(1.05) rotate(-3deg)}
+.pcard-icon{width:52px;height:52px;margin-bottom:22px;color:var(--gold);position:relative;z-index:1;flex-shrink:0;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pcard-icon.body{color:var(--sage)}
+.pcard-icon svg{width:100%;height:100%;display:block}
+.pcard-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;line-height:1.2;margin-bottom:6px;position:relative;z-index:1}
+.pcard-area{font-size:.68rem;color:var(--muted);letter-spacing:.02em;position:relative;z-index:1;line-height:1.5}
+.pcard-hint{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:8px;position:relative;z-index:1;margin-top:auto;padding-top:20px;font-weight:500}
+.pcard-hint::after{content:"→";transition:transform .3s}
+.pcard-icon.body ~ .pcard-name ~ .pcard-hint{color:var(--sage)}
+.disclaimer{font-size:.72rem;color:#9b8e80;margin:26px 0 0;font-style:italic;line-height:1.7;padding:18px 22px;background:rgba(255,255,255,.4);border-left:2px solid var(--gold-soft);border-radius:0 4px 4px 0}
+
+.modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .4s ease}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-bg{position:absolute;inset:0;background:rgba(46,40,35,.42);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.modal-panel{position:relative;background:radial-gradient(ellipse 80% 60% at 20% 0%,rgba(255,255,255,.95),transparent 60%),radial-gradient(ellipse 60% 50% at 90% 100%,rgba(232,220,196,.5),transparent 60%),linear-gradient(180deg,#fdfbf8 0%,#f9f4ec 100%);width:100%;max-width:720px;max-height:88vh;border-radius:8px;box-shadow:var(--shadow-lg);overflow:hidden;transform:translateY(20px) scale(.98);transition:transform .5s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.modal.open .modal-panel{transform:translateY(0) scale(1)}
+.modal-close{position:absolute;top:18px;right:18px;z-index:2;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.85);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink);transition:all .3s}
+.modal-close:hover{background:var(--ink);color:#fdfbf8;transform:rotate(90deg)}
+.modal-close svg{width:16px;height:16px}
+.modal-scroll{overflow-y:auto;padding:56px 56px 48px;-webkit-overflow-scrolling:touch}
+@media(max-width:600px){.modal-scroll{padding:56px 26px 40px}}
+.modal-ornament{display:flex;align-items:center;gap:14px;margin-bottom:24px;color:var(--gold)}
+.modal-ornament::before,.modal-ornament::after{content:"";height:1px;background:currentColor;opacity:.4}
+.modal-ornament::before{width:40px}
+.modal-ornament::after{flex:1}
+.modal-ornament svg{width:14px;height:14px;opacity:.8}
+.modal-ornament span{font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;font-weight:500}
+.modal-title{font-size:clamp(2rem,4.5vw,2.8rem);font-weight:500;line-height:1.1;margin-bottom:20px}
+.modal-lead{font-family:'Cormorant Garamond',serif;font-size:1.25rem;line-height:1.55;color:var(--ink-soft);margin-bottom:32px;font-weight:400}
+.modal-section{margin-bottom:32px}
+.modal-section h4{font-family:'Jost',sans-serif;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px}
+.modal-section p{font-size:.94rem;line-height:1.75;color:var(--ink-soft);margin-bottom:12px}
+.modal-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.modal-list li{font-size:.92rem;line-height:1.6;color:var(--ink-soft);padding-left:22px;position:relative}
+.modal-list li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:1px;background:var(--gold)}
+.modal-note{font-size:.78rem;color:var(--muted);font-style:italic;padding:18px 22px;border-left:2px solid var(--gold-soft);background:rgba(232,220,196,.25);border-radius:0 4px 4px 0;margin-top:28px;line-height:1.65}
+.modal-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:36px;padding-top:32px;border-top:1px solid var(--line)}
+
+.case-card{display:grid;grid-template-columns:1.25fr .85fr;gap:0;align-items:stretch;background:linear-gradient(180deg,#3b3631,#302b26);color:#faf7f2;border-radius:8px;box-shadow:var(--shadow-md);overflow:hidden}
+@media(max-width:760px){.case-card{grid-template-columns:1fr}}
+
+.slider{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;user-select:none;touch-action:pan-y;background:#4a433d}
+.slider .layer{position:absolute;inset:0;overflow:hidden}
+.slider .layer img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:var(--pos, 50% 50%);
+  transform:scale(var(--scale, 1)) translate(var(--tx, 0%), var(--ty, 0%));
+  transform-origin:center center;
+  display:block;
+  pointer-events:none;
+  will-change:transform;
+}
+.slider .layer.before::after,.slider .layer.after::after{content:attr(data-label);position:absolute;bottom:16px;background:rgba(176,141,85,.95);color:#fff;padding:6px 12px;font-size:.6rem;letter-spacing:.18em;font-weight:500;border-radius:2px;z-index:2}
+.slider .layer.before::after{left:16px}
+.slider .layer.after::after{right:16px}
+.slider .layer.after{clip-path:inset(0 0 0 50%)}
+.slider .divider{position:absolute;top:0;bottom:0;width:2px;background:#fff;pointer-events:none;box-shadow:0 0 16px rgba(0,0,0,.4);left:50%;transform:translateX(-1px);z-index:2}
+.slider .knob{position:absolute;top:50%;left:50%;width:44px;height:44px;margin-left:-22px;margin-top:-22px;background:#fff;border-radius:50%;pointer-events:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.35),0 0 0 4px rgba(255,255,255,.2);color:var(--gold);z-index:3}
+.slider .knob svg{width:18px;height:18px}
+.slider input[type=range]{position:absolute;inset:0;width:100%;height:100%;margin:0;appearance:none;-webkit-appearance:none;background:transparent;cursor:ew-resize;z-index:4}
+.slider input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:44px;height:44px;border-radius:50%;background:transparent;border:0;cursor:ew-resize}
+.slider input[type=range]::-moz-range-thumb{width:44px;height:44px;border-radius:50%;background:transparent;border:0;cursor:ew-resize}
+
+.case-copy{padding:36px 32px}
+@media(max-width:760px){.case-copy{padding:32px 24px}}
+.case-number{color:#c4a574;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;display:inline-block;margin-bottom:14px}
+.case-copy h3{margin:0 0 18px;font-size:1.65rem;color:#faf7f2;line-height:1.15}
+.case-copy h3 em{color:#d4b884}
+.case-copy p{color:#c4bbb0;font-size:.85rem;line-height:1.7;margin:0 0 18px}
+.case-copy small{display:block;border-top:1px solid #786b5d;margin-top:24px;padding-top:18px;color:#a99e91;font-size:.68rem;line-height:1.7;font-style:italic}
+
+.prof-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:center;margin-top:24px}
+@media(max-width:720px){.prof-grid{grid-template-columns:1fr;gap:28px}}
+.prof-placeholder{aspect-ratio:4/5;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.7),transparent 50%),linear-gradient(150deg,#f0e5d5 0%,#e2d3bb 100%);border:1px solid var(--line-strong);border-radius:4px;display:grid;place-items:center;text-align:center;color:#9a876e;font:1.15rem 'Cormorant Garamond',serif;font-style:italic;padding:24px;box-shadow:var(--shadow-sm)}
+.prof-placeholder small{font:.62rem 'Jost',sans-serif;text-transform:uppercase;letter-spacing:.16em;margin-top:8px;display:block;font-style:normal}
+.prof-grid .lead{line-height:1.75;margin:18px 0}
+.bio{font-size:.88rem;color:var(--muted);line-height:1.8}
+.pending{display:inline-block;background:rgba(232,220,196,.55);color:#8a6f42;padding:8px 12px;border-radius:2px;font-size:.68rem;letter-spacing:.06em;margin-top:20px;border-left:2px solid var(--gold-soft)}
+
+.ig-bio{font-size:.85rem;color:var(--muted);line-height:1.85;background:rgba(255,255,255,.55);padding:24px 26px;border-radius:6px;border:1px solid var(--line);backdrop-filter:blur(8px)}
+.ig-bio strong{color:var(--ink);font-weight:500;display:block;margin-bottom:8px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+.ig-bio mark{background:rgba(176,141,87,.14);color:var(--gold);padding:1px 6px;border-radius:2px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pills span{background:rgba(255,255,255,.7);border:1px solid var(--line-strong);padding:7px 15px;border-radius:999px;color:var(--muted);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;backdrop-filter:blur(6px)}
+
+.contact{position:relative;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,255,255,.6),transparent 60%),linear-gradient(180deg,rgba(244,235,224,.5),rgba(239,228,214,.75));border-top:1px solid var(--line);padding:96px 0;text-align:left}
+@media(max-width:620px){.contact{padding:70px 0}}
+.contact-inner{max-width:600px}
+.contact h2{margin:8px 0 22px}
+.contact .lead{max-width:440px;margin:0 0 32px;font-size:.95rem}
+.contact .pending{margin-top:24px}
+
+footer{padding:44px 0 36px;border-top:1px solid var(--line);color:#9a8e82;font-size:.72rem;letter-spacing:.04em;background:rgba(253,251,248,.5)}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;max-width:920px;margin:0 auto;padding:0 24px}
+@media(max-width:620px){.footer-inner{display:block}.footer-inner span{display:block;margin:5px 0}}
+
+.wa{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));right:20px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,.45),0 2px 8px rgba(0,0,0,.15);text-decoration:none;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:26px;height:26px}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#inicio" class="brand">
+      <span class="brand-symbol">S</span>
+      <span><strong>SENS</strong><small>ESTÉTICA FACIAL</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#proc">Procedimentos</a>
+      <a href="#res">Resultados</a>
+      <a href="#prof">A Profissional</a>
+      <a class="nav-cta" href="#contato">Agendar</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">SENS · Estética Facial em Arapiraca</div>
+    <h1>Realce sua beleza.<br><em>Preserve sua essência.</em></h1>
+    <p class="hero-lead">Naturalidade, harmonia e cuidado individual.</p>
+    <div class="actions">
+      <a class="button" href="#contato">Agendar avaliação <span>↗</span></a>
+      <a class="button button-outline" href="#res">Ver resultados</a>
+    </div>
+    <p class="hero-footnote">Cada pessoa possui sua própria beleza. O cuidado começa com uma avaliação individualizada.</p>
+  </div>
+</header>
+
+<section id="proc">
+  <div class="wrap">
+    <div class="section-intro reveal">
+      <div>
+        <p class="section-label">01 · Cuidado personalizado</p>
+        <h2>Procedimentos</h2>
+      </div>
+      <p class="lead">Toque em cada card para conhecer a proposta, onde atua e o que esperar.</p>
+    </div>
+    <div class="pgrid" id="pgrid"></div>
+    <p class="disclaimer">As informações são educativas. A indicação depende de avaliação individual e os resultados podem variar de pessoa para pessoa.</p>
+  </div>
+</section>
+
+<section id="res">
+  <div class="wrap">
+    <div class="section-intro reveal">
+      <div>
+        <p class="section-label">02 · Casos reais</p>
+        <h2>Resultados reais</h2>
+      </div>
+      <p class="lead">Arraste para comparar antes e depois. Resultados individuais, sem filtros e sem promessas.</p>
+    </div>
+
+    <!-- ===== CASO 01 — HARMONIZAÇÃO FACIAL ===== -->
+    <article class="case-card reveal">
+      <div class="slider" id="slider0">
+        <div class="layer before" data-label="ANTES">
+          <img src="https://lh3.googleusercontent.com/d/1op1od_eP7C2IKiEI4gDCwFhu7PrkYHZW"
+               alt="Antes — preenchimento facial e harmonização do contorno"
+               style="--pos:50% 50%; --scale:1; --tx:0%; --ty:0%;"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="layer after" id="after0" data-label="DEPOIS">
+          <img src="https://lh3.googleusercontent.com/d/1zsCmDGehVeG2059eyG9r_krUwucjve6l"
+               alt="Depois — preenchimento facial e harmonização do contorno"
+               style="--pos:50% 50%; --scale:1; --tx:0%; --ty:0%;"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="divider" id="divider0"></div>
+        <div class="knob" id="knob0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 L4 12 L9 18 M15 6 L20 12 L15 18"/></svg>
+        </div>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois do caso 01"
+          oninput="
+            document.getElementById('after0').style.clipPath='inset(0 0 0 '+this.value+'%)';
+            document.getElementById('divider0').style.left=this.value+'%';
+            document.getElementById('knob0').style.left=this.value+'%';">
+      </div>
+      <div class="case-copy">
+        <span class="case-number">Caso 01</span>
+        <h3>Preenchimento facial<br><em>harmonização e naturalidade</em></h3>
+        <p>Mais definição do contorno facial, sustentação e harmonia — com resultado natural e personalizado, respeitando os traços individuais.</p>
+        <small>As imagens apresentam um resultado individual e não representam garantia de resultados futuros. Resultados variam de pessoa para pessoa.</small>
+      </div>
+    </article>
+
+    <!-- ===== CASO 02 — GLABELA ===== -->
+    <article class="case-card reveal" style="margin-top:28px">
+      <div class="slider" id="slider1">
+        <div class="layer before" data-label="ANTES">
+          <img src="https://lh3.googleusercontent.com/d/1HF3S1VzchLH7TCih99fZNfT-C3m-p2Fp"
+               alt="Antes — toxina botulínica na região da glabela"
+               style="--pos:50% 50%; --scale:1; --tx:0%; --ty:0%;"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="layer after" id="after1" data-label="DEPOIS">
+          <img src="https://lh3.googleusercontent.com/d/1KY2Doc-Gw8vxxyOA669aF855LaAmhz0I"
+               alt="Depois — toxina botulínica na região da glabela"
+               style="--pos:50% 50%; --scale:1; --tx:0%; --ty:0%;"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="divider" id="divider1"></div>
+        <div class="knob" id="knob1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 L4 12 L9 18 M15 6 L20 12 L15 18"/></svg>
+        </div>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois do caso 02"
+          oninput="
+            document.getElementById('after1').style.clipPath='inset(0 0 0 '+this.value+'%)';
+            document.getElementById('divider1').style.left=this.value+'%';
+            document.getElementById('knob1').style.left=this.value+'%';">
+      </div>
+      <div class="case-copy">
+        <span class="case-number">Caso 02</span>
+        <h3>Aplicação de toxina botulínica<br><em>na região da glabela</em></h3>
+        <p>Região entre as sobrancelhas com suavização das linhas de expressão e preservação do movimento natural.</p>
+        <small>As imagens apresentam um resultado individual e não representam garantia de resultados futuros. Resultados variam de pessoa para pessoa.</small>
+      </div>
+    </article>
+
+    <!-- ===== CASO 03 — TESTA ===== -->
+    <article class="case-card reveal" style="margin-top:28px">
+      <div class="slider" id="slider2">
+        <div class="layer before" data-label="ANTES">
+          <img src="https://lh3.googleusercontent.com/d/12ifylIyWgEbtwSxZKRxrwIwthYaTYbNT"
+               alt="Antes — toxina botulínica na região da testa"
+               style="--pos:50% 50%; --scale:1; --tx:0%; --ty:0%;"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="layer after" id="after2" data-label="DEPOIS">
+          <img src="https://lh3.googleusercontent.com/d/10zhJ02mcOpKmhOhisAMshVrFIkLFrZ8l"
+               alt="Depois — toxina botulínica na região da testa"
+               style="--pos:50% 50%; --scale:1; --tx:0%; --ty:0%;"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="divider" id="divider2"></div>
+        <div class="knob" id="knob2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 L4 12 L9 18 M15 6 L20 12 L15 18"/></svg>
+        </div>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois do caso 03"
+          oninput="
+            document.getElementById('after2').style.clipPath='inset(0 0 0 '+this.value+'%)';
+            document.getElementById('divider2').style.left=this.value+'%';
+            document.getElementById('knob2').style.left=this.value+'%';">
+      </div>
+      <div class="case-copy">
+        <span class="case-number">Caso 03</span>
+        <h3>Aplicação de toxina botulínica<br><em>na região da testa</em></h3>
+        <p>Suavização das linhas horizontais da testa, preservando a expressão natural e a movimentação espontânea do olhar.</p>
+        <small>As imagens apresentam um resultado individual e não representam garantia de resultados futuros. Resultados variam de pessoa para pessoa.</small>
+      </div>
+    </article>
+
+    <!-- ===== CASO 04 — ORBICULAR DOS OLHOS ===== -->
+    <article class="case-card reveal" style="margin-top:28px">
+      <div class="slider" id="slider3">
+        <div class="layer before" data-label="ANTES">
+          <img src="https://lh3.googleusercontent.com/d/13R0QAlJKpOkmdjeoU8jBe4PpzX0YHkKo"
+               alt="Antes — toxina botulínica na região orbicular dos olhos"
+               style="--pos:50% 50%; --scale:1; --tx:0%; --ty:0%;"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="layer after" id="after3" data-label="DEPOIS">
+          <img src="https://lh3.googleusercontent.com/d/1J9MN9fCLdY7Cy2-JhMjDgoASNqLbB9bQ"
+               alt="Depois — toxina botulínica na região orbicular dos olhos"
+               style="--pos:50% 50%; --scale:1; --tx:0%; --ty:0%;"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="divider" id="divider3"></div>
+        <div class="knob" id="knob3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 L4 12 L9 18 M15 6 L20 12 L15 18"/></svg>
+        </div>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois do caso 04"
+          oninput="
+            document.getElementById('after3').style.clipPath='inset(0 0 0 '+this.value+'%)';
+            document.getElementById('divider3').style.left=this.value+'%';
+            document.getElementById('knob3').style.left=this.value+'%';">
+      </div>
+      <div class="case-copy">
+        <span class="case-number">Caso 04</span>
+        <h3>Aplicação de toxina botulínica<br><em>na região orbicular dos olhos</em></h3>
+        <p>Suavização das linhas de expressão ao redor dos olhos, também conhecidas como "pés de galinha", mantendo a naturalidade do olhar e dos movimentos.</p>
+        <small>As imagens apresentam um resultado individual e não representam garantia de resultados futuros. Resultados variam de pessoa para pessoa.</small>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="prof">
+  <div class="wrap">
+    <div class="reveal"><p class="section-label">03 · A profissional</p></div>
+    <div class="prof-grid reveal">
+      <div class="prof-placeholder">
+        Foto Monique Fiscina
+        <small>Inserir foto profissional</small>
+      </div>
+      <div>
+        <h2>Monique Fiscina<br><em>por trás da SENS.</em></h2>
+        <p class="lead">Especialista em valorizar a sua beleza com ciência, sensibilidade e atenção meticulosa a cada detalhe dos seus traços.</p>
+        <p class="bio">À frente da SENS em Arapiraca, Monique Fiscina alia conhecimento técnico e um olhar artístico individualizado. Sua prática clínica prioriza a escuta atenta e o respeito absoluto à anatomia única de cada paciente.</p>
+        <p style="margin-top:18px;"><a href="https://www.instagram.com/dra_monique_fiscina/" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;font-size:.82rem;letter-spacing:.04em;">Conheça o perfil de Monique Fiscina no Instagram ↗</a></p>
+        <span class="pending">COREN/AL 478143 · Arapiraca - AL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="instagram">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="section-label">04 · Presença digital</p>
+      <h2 style="margin-bottom:24px;">Instagram @sensarapiraca</h2>
+      <div class="ig-bio">
+        <strong>Bio Oficial</strong>
+        SENS | Estética Facial · Naturalidade • Harmonia • Cuidado · Procedimentos personalizados · 📍 <mark>Arapiraca - AL</mark> · 👇 Agende sua avaliação
+      </div>
+      <div class="pills">
+        <span>Procedimentos</span><span>Resultados</span><span>Botox</span><span>Preenchimento</span><span>Dúvidas</span><span>A SENS</span><span>Contato</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="contact">
+  <div class="wrap">
+    <div class="contact-inner reveal">
+      <p class="section-label">05 · Vamos conversar</p>
+      <h2>Seu próximo passo começa<br><em>com uma conversa.</em></h2>
+      <p class="lead">Fale com a equipe da SENS para conhecer os procedimentos adequados para o seu caso e agendar sua avaliação.</p>
+      <a class="button" href="https://wa.me/5582982214000" target="_blank" rel="noopener">Falar pelo WhatsApp <span>↗</span></a>
+      <p class="pending">📍 Arapiraca - AL · Horário: [Inserir horário de atendimento]</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span>© SENS · Estética Facial em Arapiraca - AL</span>
+    <span>Naturalidade, harmonia e cuidado.</span>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-bg" onclick="closeModal()"></div>
+  <div class="modal-panel">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 L6 18 M6 6 L18 18"/></svg>
+    </button>
+    <div class="modal-scroll" id="modalContent"></div>
+  </div>
+</div>
+
+<a class="wa" href="https://wa.me/5582982214000" target="_blank" rel="noopener" aria-label="Falar com a SENS pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- ===== PAINEL DE AJUSTE (abre com ?debug na URL) ===== -->
+<div id="debugPanel" style="display:none;position:fixed;bottom:80px;left:20px;z-index:200;background:#fff;padding:16px;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.2);font-family:monospace;font-size:11px;max-width:290px;color:#2e2823;">
+  <div style="font-weight:bold;margin-bottom:8px;color:#a7834e;">🔧 Ajuste dos sliders</div>
+  <label style="display:block;margin-bottom:6px;">Foto:
+    <select id="dbgImg" style="width:100%;margin-top:2px;padding:4px;border:1px solid #ddd;border-radius:3px;">
+      <option value="0-before">Caso 01 — Harmonização · Antes</option>
+      <option value="0-after">Caso 01 — Harmonização · Depois</option>
+      <option value="1-before">Caso 02 — Glabela · Antes</option>
+      <option value="1-after">Caso 02 — Glabela · Depois</option>
+      <option value="2-before">Caso 03 — Testa · Antes</option>
+      <option value="2-after">Caso 03 — Testa · Depois</option>
+      <option value="3-before">Caso 04 — Orbicular · Antes</option>
+      <option value="3-after">Caso 04 — Orbicular · Depois</option>
+    </select>
+  </label>
+  <label style="display:block;margin-bottom:6px;">Posição X: <span id="dbgPosXval">50</span>%
+    <input id="dbgPosX" type="range" min="0" max="100" value="50" style="width:100%;">
+  </label>
+  <label style="display:block;margin-bottom:6px;">Posição Y: <span id="dbgPosYval">50</span>%
+    <input id="dbgPosY" type="range" min="0" max="100" value="50" style="width:100%;">
+  </label>
+  <label style="display:block;margin-bottom:6px;">Zoom: <span id="dbgScaleval">1.00</span>
+    <input id="dbgScale" type="range" min="0.5" max="2" step="0.01" value="1" style="width:100%;">
+  </label>
+  <label style="display:block;margin-bottom:6px;">Mover X: <span id="dbgTxval">0</span>%
+    <input id="dbgTx" type="range" min="-20" max="20" step="0.5" value="0" style="width:100%;">
+  </label>
+  <label style="display:block;margin-bottom:6px;">Mover Y: <span id="dbgTyval">0</span>%
+    <input id="dbgTy" type="range" min="-20" max="20" step="0.5" value="0" style="width:100%;">
+  </label>
+  <button id="dbgCopy" style="margin-top:8px;padding:6px 12px;background:#a7834e;color:#fff;border:0;border-radius:4px;cursor:pointer;width:100%;font-family:inherit;">Copiar CSS</button>
+  <div id="dbgOutput" style="margin-top:8px;padding:6px;background:#f5f5f5;border-radius:4px;font-size:10px;word-break:break-all;user-select:all;min-height:20px;"></div>
+</div>
+
+<script>
+const ICONS = {
+  "preenchimento-facial":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 C 24 6, 38 20, 38 29 a 14 14 0 1 1 -28 0 C 10 20, 24 6, 24 6 Z"/><path d="M18 30 Q 21 26, 25 26" opacity=".55"/><circle cx="21" cy="33" r="1.3" fill="currentColor" stroke="none" opacity=".7"/></svg>`,
+  "toxina-botulinica":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M6 16 Q 12 10, 18 16 T 30 16 T 42 16" opacity=".35"/><path d="M6 24 Q 12 19, 18 24 T 30 24 T 42 24" opacity=".65"/><path d="M6 33 L 42 33"/><circle cx="24" cy="33" r="1.5" fill="currentColor" stroke="none" opacity=".7"/></svg>`,
+  "bioestimulador":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><circle cx="24" cy="24" r="6"/><circle cx="24" cy="24" r="1.6" fill="currentColor" stroke="none"/><path d="M24 4 L24 12 M24 36 L24 44 M4 24 L12 24 M36 24 L44 24"/><path d="M10 10 L15 15 M33 33 L38 38 M38 10 L33 15 M15 33 L10 38"/></svg>`,
+  "fios-pdo":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M8 40 L 40 8" opacity=".9"/><circle cx="12" cy="36" r="1.4" fill="currentColor" stroke="none"/><circle cx="20" cy="28" r="1.4" fill="currentColor" stroke="none"/><circle cx="28" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="36" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>`,
+  "fios-espiculados":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40 Q 24 24, 40 8" opacity=".9"/><path d="M14 34 L 10 30 M21 27 L 17 23 M28 20 L 24 16 M35 13 L 31 9"/></svg>`,
+  "microvasos":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M24 44 L 24 26"/><path d="M24 26 C 24 20, 20 16, 14 14"/><path d="M24 26 C 24 20, 28 16, 34 14"/><path d="M14 14 C 12 10, 9 9, 6 9"/><path d="M34 14 C 36 10, 39 9, 42 9"/><circle cx="24" cy="26" r="1.6" fill="currentColor" stroke="none" opacity=".7"/></svg>`,
+  "acne-melasma":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="15" cy="14" r="2.2"/><circle cx="32" cy="12" r="1.6"/><circle cx="38" cy="22" r="1.2"/><circle cx="20" cy="26" r="2.8"/><circle cx="34" cy="30" r="2"/><circle cx="12" cy="38" r="1.6"/><circle cx="28" cy="40" r="2.2"/><circle cx="14" cy="22" r="1" fill="currentColor" stroke="none" opacity=".6"/><circle cx="30" cy="20" r="1" fill="currentColor" stroke="none" opacity=".6"/><circle cx="22" cy="34" r="1" fill="currentColor" stroke="none" opacity=".6"/></svg>`,
+  "hidrolipoclasia":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M4 24 Q 12 14, 24 14 T 44 24"/><path d="M4 30 Q 12 22, 24 22 T 44 30" opacity=".65"/><path d="M4 36 Q 12 30, 24 30 T 44 36" opacity=".35"/></svg>`,
+  "depilacao-laser":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4 L 28 4 L 26 20 L 22 20 Z"/><path d="M14 24 L 34 24"/><path d="M12 30 L 36 30" opacity=".6"/><path d="M14 36 L 34 36" opacity=".35"/><path d="M18 42 L 30 42" opacity=".2"/></svg>`,
+  "drenodetox":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 C 24 6, 34 18, 34 27 a 10 10 0 1 1 -20 0 C 14 18, 24 6, 24 6 Z"/><path d="M19 27 Q 22 24, 25 24" opacity=".55"/><path d="M4 44 Q 10 40, 16 44 T 28 44 T 40 44" opacity=".5"/></svg>`,
+  "massagem-relaxante":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M6 32 C 10 18, 20 18, 24 26 C 28 18, 38 18, 42 32"/><path d="M12 38 Q 24 32, 36 38" opacity=".5"/><circle cx="24" cy="26" r="1.4" fill="currentColor" stroke="none" opacity=".7"/></svg>`,
+  "estrias-flacidez":`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M6 14 Q 16 10, 24 14 T 42 14"/><path d="M6 24 Q 16 20, 24 24 T 42 24" opacity=".65"/><path d="M6 34 Q 16 30, 24 34 T 42 34" opacity=".35"/></svg>`
+};
+
+const procedures = {
+  "preenchimento-facial":{label:"Preenchimento Facial",title:"Preenchimento <em>facial</em>",lead:"Um procedimento pensado para equilibrar volumes e devolver definição ao rosto, respeitando a sua identidade.",where:["Maçãs do rosto — reposição de volume e suporte","Contorno mandibular — definição e harmonia","Olheiras — suavização de sulcos e luminosidade","Lábios — hidratação, contorno e volume natural","Mento — equilíbrio do terço inferior"],what:"Utilizamos ácido hialurônico de marcas consolidadas, aplicado com técnica personalizada. O objetivo não é transformar — é equilibrar. Cada ponto é planejado após avaliação criteriosa das proporções do seu rosto.",expect:["Resultado visível imediatamente, com evolução nos primeiros dias","Aparência natural, respeitando seus traços originais","Durabilidade variável conforme a região e o produto utilizado","Retorno gradual às atividades no mesmo dia"],note:"A indicação, a quantidade de produto e as regiões tratadas são definidas exclusivamente após avaliação individual. Resultados variam de pessoa para pessoa."},
+  "toxina-botulinica":{label:"Toxina Botulínica",title:"Toxina <em>botulínica</em>",lead:"Suavização de linhas de expressão com preservação dos movimentos naturais do rosto.",where:["Região frontal (testa) — linhas horizontais","Glabela — linhas verticais entre as sobrancelhas","Orbicular dos olhos — os \"pés de galinha\"","Terço inferior — conforme avaliação individual"],what:"A toxina botulínica atua relaxando temporariamente a musculatura responsável pelas linhas de expressão. O objetivo é uma aparência descansada, sem perder a naturalidade dos movimentos.",expect:["Efeito gradual, com resultado visível entre 3 e 14 dias","Aparência descansada, sem congelamento da expressão","Durabilidade média de 4 a 6 meses, variável por pessoa","Retorno imediato às atividades"],note:"A dose e os pontos de aplicação são definidos individualmente, após avaliação da musculatura e das linhas de expressão de cada pessoa. Resultados variam de pessoa para pessoa."},
+  "bioestimulador":{label:"Bioestimulador",title:"Bioestimulador <em>de colágeno</em>",lead:"Estímulo à produção natural de colágeno, para firmeza gradual e melhora da qualidade da pele.",where:["Rosto — firmeza global e sustentação","Contorno mandibular — definição progressiva","Pescoço e colo — conforme avaliação individual"],what:"Diferente do preenchimento, o bioestimulador não adiciona volume imediato. Ele estimula o próprio organismo a produzir colágeno, resultando em firmeza e melhora gradual da pele.",expect:["Resultado progressivo — aparece ao longo de 1 a 3 meses","Melhora da textura, firmeza e luminosidade","Durabilidade de até 2 anos, variável por pessoa","Pode ser combinado com outros procedimentos"],note:"O protocolo é definido individualmente, considerando as características da pele e os objetivos de cada pessoa. Resultados variam de pessoa para pessoa."},
+  "fios-pdo":{label:"Fios de PDO",title:"Fios <em>de PDO</em>",lead:"Sustentação e estímulo de colágeno em áreas específicas do rosto, com resultado natural e gradual.",where:["Contorno mandibular — definição","Maçãs do rosto — sustentação","Sobrancelhas — leve elevação","Pescoço — conforme avaliação individual"],what:"Os fios de PDO são absorvíveis pelo organismo. Atuam em duas frentes: sustentação imediata de tecidos e estímulo de colágeno ao longo do tempo, resultando em firmeza progressiva.",expect:["Efeito de sustentação visível nos primeiros dias","Estímulo de colágeno ao longo de semanas","Resultado natural e gradual","Durabilidade variável conforme a região e o tipo de fio"],note:"A indicação depende da avaliação individual da qualidade da pele e do grau de flacidez. Resultados variam de pessoa para pessoa."},
+  "fios-espiculados":{label:"Fios Espiculados",title:"Fios <em>espiculados</em>",lead:"Sustentação mais intensa e estímulo de colágeno em áreas que necessitam de maior firmeza.",where:["Contorno mandibular — definição acentuada","Maçãs do rosto — sustentação","Regiões com flacidez moderada — conforme avaliação"],what:"Os fios espiculados possuem pequenas projeções que ajudam na fixação aos tecidos, proporcionando sustentação mais intensa e estímulo de colágeno localizado.",expect:["Sustentação visível nas primeiras semanas","Melhora progressiva da firmeza","Resultado natural, respeitando os traços individuais","Durabilidade variável por pessoa"],note:"A indicação depende da avaliação individual do grau de flacidez e das características da pele. Resultados variam de pessoa para pessoa."},
+  "microvasos":{label:"Microvasos",title:"Tratamento de <em>microvasos</em>",lead:"Cuidado direcionado a vasinhos visíveis no rosto, com foco em uniformidade e saúde da pele.",where:["Nariz e bochechas — regiões mais comuns","Queixo e região periocular — conforme avaliação","Outras áreas faciais — definidas individualmente"],what:"Utilizamos técnicas específicas para o tratamento de microvasos faciais, sempre com avaliação criteriosa da região e das características individuais da pele.",expect:["Melhora gradual ao longo das sessões","Protocolo definido individualmente","Cuidados pós-procedimento orientados caso a caso","Número de sessões variável conforme a resposta"],note:"O tratamento é definido após avaliação individual da região e das características da pele. Resultados variam de pessoa para pessoa."},
+  "acne-melasma":{label:"Acne e Melasma",title:"Acne e <em>melasma</em>",lead:"Protocolo voltado à saúde e à uniformidade da pele, definido após avaliação criteriosa.",where:["Rosto — áreas com acne ativa ou marcas residuais","Regiões com melasma — conforme avaliação","Manchas e irregularidades de tom — definidas individualmente"],what:"Cada pele é única. O protocolo para acne ou melasma é construído após avaliação das características individuais, podendo combinar diferentes procedimentos e orientações de cuidado domiciliar.",expect:["Melhora gradual ao longo do tratamento","Protocolo personalizado conforme a resposta da pele","Orientação de cuidados diários","Acompanhamento periódico"],note:"O protocolo é definido individualmente após avaliação da pele e das características de cada caso. Resultados variam de pessoa para pessoa."},
+  "hidrolipoclasia":{label:"Hidrolipoclasia",title:"<em>Hidrolipoclasia</em>",lead:"Procedimento voltado para gordura localizada, sempre indicado após avaliação individual.",where:["Abdômen — região mais comum","Flancos — conforme avaliação","Outras áreas — definidas individualmente"],what:"A hidrolipoclasia combina a ação de substâncias específicas com ultrassom, direcionado a áreas de gordura localizada. A indicação depende da avaliação individual.",expect:["Resultado gradual ao longo das sessões","Protocolo personalizado","Necessidade de acompanhamento","Resultado variável conforme a resposta individual"],note:"A indicação depende da avaliação individual das características da região e dos objetivos de cada pessoa. Resultados variam de pessoa para pessoa."},
+  "depilacao-laser":{label:"Depilação a Laser",title:"Depilação <em>a laser</em>",lead:"Redução progressiva de pelos ao longo das sessões, com conforto e segurança.",where:["Rosto — buço, queixo e outras regiões","Corpo — axilas, pernas, virilha e outras áreas","Regiões específicas — conforme avaliação"],what:"A depilação a laser atua no folículo capilar, proporcionando redução progressiva dos pelos ao longo das sessões. O protocolo é definido após avaliação do tipo de pele e de pelo.",expect:["Redução progressiva ao longo das sessões","Número de sessões variável conforme a região e a resposta individual","Cuidados pós-sessão orientados","Resultado gradual e duradouro"],note:"O protocolo e o número de sessões são definidos individualmente após avaliação. Resultados variam de pessoa para pessoa."},
+  "drenodetox":{label:"Drenodetox",title:"<em>Drenodetox</em>",lead:"Técnica manual que contribui para a sensação de leveza e bem-estar corporal.",where:["Corpo — pernas, abdômen e outras regiões","Pós-operatório — conforme orientação profissional","Protocolos de bem-estar — definidos individualmente"],what:"A drenodetox combina técnicas manuais que auxiliam na eliminação de líquidos e na sensação de leveza. É um cuidado voltado ao bem-estar e pode ser integrado a protocolos maiores.",expect:["Sensação de leveza e bem-estar","Resultado gradual ao longo das sessões","Protocolo definido individualmente","Pode ser combinada com outras técnicas"],note:"A indicação e o protocolo são definidos individualmente conforme os objetivos de cada pessoa. Resultados variam de pessoa para pessoa."},
+  "massagem-relaxante":{label:"Massagem Relaxante",title:"Massagem <em>relaxante</em>",lead:"Cuidado e bem-estar com foco no relaxamento muscular e no equilíbrio do corpo.",where:["Corpo inteiro — conforme preferência e avaliação","Regiões específicas — costas, ombros, pernas","Protocolos de bem-estar — definidos individualmente"],what:"A massagem relaxante é um convite ao cuidado. Através de técnicas manuais, proporciona relaxamento muscular, melhora da circulação e sensação de bem-estar.",expect:["Relaxamento imediato","Melhora da sensação de bem-estar","Pode ser integrada a protocolos maiores","Frequência definida individualmente"],note:"A frequência e o protocolo são definidos conforme os objetivos de cada pessoa. Resultados variam de pessoa para pessoa."},
+  "estrias-flacidez":{label:"Estrias, Flacidez e Gordura",title:"Estrias, flacidez <em>e gordura</em>",lead:"Conjunto de técnicas combinadas conforme avaliação individual de cada caso.",where:["Abdômen — flacidez e gordura localizada","Coxas e glúteos — estrias e flacidez","Braços — flacidez","Outras regiões — definidas individualmente"],what:"Cada caso é único. Combinamos diferentes técnicas conforme a avaliação individual, com o objetivo de melhorar a qualidade da pele, a firmeza e a textura das regiões tratadas.",expect:["Resultado gradual ao longo do protocolo","Combinação de técnicas definida individualmente","Acompanhamento periódico","Orientação de cuidados domiciliares"],note:"A combinação de técnicas e o protocolo são definidos individualmente após avaliação. Resultados variam de pessoa para pessoa."}
+};
+
+const procs = [
+  {id:"preenchimento-facial",n:"Preenchimento facial",area:"Face · lábios · contorno",body:false},
+  {id:"toxina-botulinica",n:"Toxina botulínica",area:"Testa · glabela · olhos",body:false},
+  {id:"bioestimulador",n:"Bioestimulador",area:"Face · pescoço",body:false},
+  {id:"fios-pdo",n:"Fios de PDO",area:"Face · contorno",body:false},
+  {id:"fios-espiculados",n:"Fios espiculados",area:"Face · contorno",body:false},
+  {id:"microvasos",n:"Microvasos",area:"Face · regiões aparentes",body:false},
+  {id:"acne-melasma",n:"Acne e melasma",area:"Face · colo",body:false},
+  {id:"hidrolipoclasia",n:"Hidrolipoclasia",area:"Região corporal",body:true},
+  {id:"depilacao-laser",n:"Depilação a laser",area:"Pernas · axilas · outras",body:true},
+  {id:"drenodetox",n:"Drenodetox",area:"Corpo · pós-operatório",body:true},
+  {id:"massagem-relaxante",n:"Massagem relaxante",area:"Corpo · bem-estar",body:true},
+  {id:"estrias-flacidez",n:"Estrias, flacidez e gordura",area:"Corpo · protocolos",body:true}
+];
+
+document.getElementById('pgrid').innerHTML = procs.map(p => `
+  <button class="pcard" onclick="openModal('${p.id}')" aria-label="Ver detalhes de ${p.n}">
+    <div class="pcard-icon${p.body?' body':''}">${ICONS[p.id]}</div>
+    <div class="pcard-name">${p.n}</div>
+    <div class="pcard-area">${p.area}</div>
+    <div class="pcard-hint">Conhecer</div>
+  </button>
+`).join('');
+
+const modal = document.getElementById('modal');
+const modalContent = document.getElementById('modalContent');
+
+function openModal(id){
+  const p = procedures[id];
+  if(!p) return;
+  modalContent.innerHTML = `
+    <div class="modal-ornament">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
+      <span>${p.label}</span>
+    </div>
+    <h2 class="modal-title" id="modalTitle">${p.title}</h2>
+    <p class="modal-lead">${p.lead}</p>
+    <div class="modal-section"><h4>Onde atua</h4><ul class="modal-list">${p.where.map(w=>`<li>${w}</li>`).join('')}</ul></div>
+    <div class="modal-section"><h4>Como funciona</h4><p>${p.what}</p></div>
+    <div class="modal-section"><h4>O que esperar</h4><ul class="modal-list">${p.expect.map(e=>`<li>${e}</li>`).join('')}</ul></div>
+    <p class="modal-note">${p.note}</p>
+    <div class="modal-cta">
+      <a class="button" href="https://wa.me/5582982214000" target="_blank" rel="noopener">Agendar avaliação <span>↗</span></a>
+      <button class="button button-outline" onclick="closeModal()">Voltar</button>
+    </div>
+  `;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modalContent.scrollTop = 0;
+}
+function closeModal(){
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* PAINEL DE AJUSTE — ?debug na URL */
+if(location.search.includes('debug')){
+  document.getElementById('debugPanel').style.display = 'block';
+  const imgs = {
+    '0-before': document.querySelector('#slider0 .layer.before img'),
+    '0-after':  document.querySelector('#slider0 .layer.after img'),
+    '1-before': document.querySelector('#slider1 .layer.before img'),
+    '1-after':  document.querySelector('#slider1 .layer.after img'),
+    '2-before': document.querySelector('#slider2 .layer.before img'),
+    '2-after':  document.querySelector('#slider2 .layer.after img'),
+    '3-before': document.querySelector('#slider3 .layer.before img'),
+    '3-after':  document.querySelector('#slider3 .layer.after img')
+  };
+  let current = imgs['0-before'];
+
+  function readVars(el){
+    const s = el.style;
+    const posRaw = s.getPropertyValue('--pos') || '50% 50%';
+    const parts = posRaw.trim().split(/\s+/);
+    return {
+      posX: (parts[0] || '50%').replace('%',''),
+      posY: (parts[1] || '50%').replace('%',''),
+      scale: s.getPropertyValue('--scale') || 1,
+      tx: (s.getPropertyValue('--tx') || '0%').replace('%',''),
+      ty: (s.getPropertyValue('--ty') || '0%').replace('%','')
+    };
+  }
+  function apply(){
+    const posX = document.getElementById('dbgPosX').value;
+    const posY = document.getElementById('dbgPosY').value;
+    const scale = document.getElementById('dbgScale').value;
+    const tx = document.getElementById('dbgTx').value;
+    const ty = document.getElementById('dbgTy').value;
+    document.getElementById('dbgPosXval').textContent = posX;
+    document.getElementById('dbgPosYval').textContent = posY;
+    document.getElementById('dbgScaleval').textContent = parseFloat(scale).toFixed(2);
+    document.getElementById('dbgTxval').textContent = tx;
+    document.getElementById('dbgTyval').textContent = ty;
+    current.style.setProperty('--pos', posX+'% '+posY+'%');
+    current.style.setProperty('--scale', scale);
+    current.style.setProperty('--tx', tx+'%');
+    current.style.setProperty('--ty', ty+'%');
+    document.getElementById('dbgOutput').textContent = `style="--pos:${posX}% ${posY}%; --scale:${scale}; --tx:${tx}%; --ty:${ty}%;"`;
+  }
+  function loadIntoPanel(){
+    const v = readVars(current);
+    document.getElementById('dbgPosX').value = v.posX;
+    document.getElementById('dbgPosY').value = v.posY;
+    document.getElementById('dbgScale').value = v.scale;
+    document.getElementById('dbgTx').value = v.tx;
+    document.getElementById('dbgTy').value = v.ty;
+    apply();
+  }
+  document.getElementById('dbgImg').addEventListener('change', e => {
+    current = imgs[e.target.value];
+    loadIntoPanel();
+  });
+  ['dbgPosX','dbgPosY','dbgScale','dbgTx','dbgTy'].forEach(id => {
+    document.getElementById(id).addEventListener('input', apply);
+  });
+  document.getElementById('dbgCopy').addEventListener('click', () => {
+    const txt = document.getElementById('dbgOutput').textContent;
+    navigator.clipboard.writeText(txt).then(()=>{
+      document.getElementById('dbgCopy').textContent = '✓ Copiado!';
+      setTimeout(()=>document.getElementById('dbgCopy').textContent='Copiar CSS', 1500);
+    });
+  });
+  loadIntoPanel();
+}
+</script>
+</body>
+</html>
